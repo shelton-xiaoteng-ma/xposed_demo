@@ -29,7 +29,7 @@ public class HookNineBotSekiro implements IXposedHookLoadPackage {
     * */
 
     private String hookPackageName = "cn.ninebot.ninebot";
-    private String host = "192.168.2.141";
+    private String host = "192.168.0.165";
     private String groupName = "ninebot";
     private String actionName = "checkcode";
     private String clientId = UUID.randomUUID().toString();
