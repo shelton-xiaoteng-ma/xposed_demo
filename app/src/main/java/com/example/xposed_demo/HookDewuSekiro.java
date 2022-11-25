@@ -80,7 +80,8 @@ public class HookDewuSekiro implements IXposedHookLoadPackage {
                                     String arg1_str = sekiroRequest.getString("arg1");
                                     byte[] arg1 = arg1_str.getBytes();
                                     byte[] res_origin = (byte[]) XposedHelpers.callStaticMethod(classz, "achilles", arg1);
-                                    String res = Base64.encode(res_origin);
+                                    String res = Base64.encodeUrlSafe(res_origin);
+//                                    String res = Base64.encode(res_origin);
                                     XposedBridge.log(Tag + "achilles arg1: " + arg1_str);
                                     XposedBridge.log(Tag + "achilles result: " + res);
                                     sekiroResponse.success(res);
